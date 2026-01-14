@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Finspree Solutions Limited | A Catalyst to Empower</title>
+    
+    <style>
+        :root {
+            --primary: #00bfff;
+            --secondary: #008080;
+            --light-bg: #f0f8ff;
+            --dark: #1a1a1a;
+            --accent: #6a0dad;
+            --text: #222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        /* ── Navbar ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            z-index: 1000;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.18);
+        }
+
+        .navbar-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 25px;
+            height: 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo-svg {
+            width: 52px;
+            height: 52px;
+        }
+
+        .logo-text {
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: color 0.25s;
+        }
+
+        .nav-links a:hover {
+            color: #fffacd;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3.5px;
+            background: white;
+            border-radius: 3px;
+            transition: all 0.35s ease;
+        }
+
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -8px); }
+
+        .mobile-menu {
+            position: absolute;
+            top: 72px;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: none;
+            flex-direction: column;
+            padding: 20px 0;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.25rem;
+            padding: 16px 30px;
+            display: block;
+            text-align: center;
+        }
+
+        .mobile-menu a:hover {
+            background: rgba(255,255,255,0.12);
+        }
+
+        .mobile-menu.active { display: flex; }
+
+        main { padding-top: 100px; }
+
+        section {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 25px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary);
+        }
+
+        h2 {
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 10px;
+            margin: 0 0 25px;
+            font-size: 2.1rem;
+        }
+
+        .checkmark-list li {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 14px;
+        }
+
+        .checkmark-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .team-member {
+            background: white;
+            padding: 28px;
+            border-radius: 10px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            margin-bottom: 35px;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 70px;
+        }
+
+        @media (max-width: 820px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            main { padding-top: 90px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <div class="navbar-container">
+        <a href="#" class="logo-container">
+            <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="44" fill="none" stroke="#6a0dad" stroke-width="8"/>
+                <path d="M28 28 Q50 8 72 28 Q94 50 72 72 Q50 92 28 72 Q6 50 28 28" 
+                      fill="none" stroke="#00d4ff" stroke-width="12" stroke-linecap="round"/>
+                <text x="50" y="60" font-family="Arial" font-size="38" font-weight="bold" fill="white" text-anchor="middle">ς</text>
+            </svg>
+            <span class="logo-text">finspree™</span>s
+        </a>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#team">Team</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<main>
+
+    <!-- Hero -->
+    <section style="text-align:center; padding: 70px 25px 50px; background: linear-gradient(to bottom, #e8f7ff, #f0f8ff);">
+        <h1 style="font-size: 3rem; margin-bottom: 12px; color: var(--secondary);">Finspree Solutions Limited</h1>
+        <p style="font-size: 1.7rem; font-style: italic; color: var(--secondary); margin: 8px 0;">
+            A Catalyst to Empower
+        </p>
+        <p style="font-size: 1.3rem; color: #444; margin-top: 25px;">
+            Transforming Businesses • Kenya • East Africa • Global
+        </p>
+    </section>
+
+    <!-- About Us -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p><strong>Finspree Solutions Limited</strong> is a consultancy company providing 360-degree solutions to businesses. We specialize in Turn Around of sick units by implementing business process re-engineering.</p>
+        <p>Our expertise lies in providing comprehensive solutions to businesses facing challenges due to lack of professionalism, absence of internal monitoring and control mechanism, substantial pilferages, higher attrition rate, cashflow crunch etc. We help them navigate complex situations and achieve sustainable growth.</p>
+        <p>We assist existing management in dealing with day-to-day business affairs effectively and efficiently. We help in managing suppliers and creditors to achieve higher profitability and support achieving higher sales turnover by coping with competitors.</p>
+        <p>We help our clients/business partners in hiring, training and effectively managing human capital — the most important aspect of business. We believe in nurturing talent through training and support.</p>
+        <p>We are also specialised in providing consultancy for project financing (debt and/or equity) and complete Banking Solutions to operating units.</p>
+        <p>Our core competence lies in transformation of businesses through structure formation and strengthening of key business aspects — moving from traditional to professional management.</p>
+        <p>Established in Kenya and expanding to Uganda, Tanzania and other neighbouring countries. Our senior management — a group of ex-bankers and professionals with more than three decades of aggregate experience in project finance, business banking, and investment advisory — drives our growth. Our goal is to become the first-choice financial advisor in Kenya, EAC, India and Globally.</p>
+        <p>Founded by Mr. Mohan Singh Shekhawat and Mr. Jabeer Basha Ellur Shaik — seasoned bankers and finance specialists with more than two decades of expertise each.</p>
+    </section>
+
+    <!-- Vision, Mission, Values -->
+    <section id="vision-mission">
+        <h2>Our Vision</h2>
+        <p>To be the first-choice advisor in structuring business operations, business management, project financing, debt/investment management, including an efficient exit mechanism. We provide end-to-end solutions to our clients.</p>
+
+        <h2>Our Mission</h2>
+        <p>To achieve our vision of being the “First-Choice advisor” through committed customer service driven by technology. Empowering our clients with service, support and education through a team of experts.</p>
+
+        <h2>Our Values</h2>
+        <p><strong>Transparency • Integrity • Innovation • Customer Centricity</strong></p>
+    </section>
+
+    <!-- Core Services & Approach -->
+    <section id="services">
+        <h2>Core Services</h2>
+        <div class="checkmark-list">
+            <strong>Stressed Asset Management:</strong>
+            <ul>
+                <li>Interim management, operational restructuring, and strategic guidance</li>
+            </ul>
+
+            <strong>Financial Advisory:</strong>
+            <ul>
+                <li>Expert advice on financial decisions, capital structuring, and funding strategies</li>
+            </ul>
+
+            <strong>Company Strengthening:</strong>
+            <ul>
+                <li>Organizational restructuring, business process re-engineering, performance enhancement through adoption of suitable technology</li>
+            </ul>
+        </div>
+
+        <h2>Our Approach</h2>
+        <div class="checkmark-list">
+            <li><strong>Collaborative:</strong> Partnering with clients to understand unique challenges and goals</li>
+            <li><strong>Customized:</strong> Tailor-made solutions addressing specific business needs</li>
+            <li><strong>Results-Oriented:</strong> Focused on delivering tangible outcomes and sustainable growth</li>
+        </div>
+
+        <h2>Expertise</h2>
+        <div class="checkmark-list">
+            <li>Business Management</li>
+            <li>Financial Restructuring</li>
+            <li>Business Turnaround</li>
+            <li>Operational Improvement</li>
+            <li>Strategic Planning</li>
+            <li>Capital Raising</li>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team">
+        <h2>Our Team</h2>
+        <p>Our team is our strength — seasoned professionals with extensive experience in Business Management, Operations, Banking, Finance, Sales & Marketing, possessing deep understanding of stressed entities.</p>
+
+        <div class="team-member">
+            <h3>Mr. Mohan Singh Shekhawat</h3>
+            <p>Highly accomplished finance professional with 22 years of experience (14 years heading Credit Portfolio of an international bank in Kenya).</p>
+            <p>B.Sc., MBA (Finance & Marketing), Certified Associate of the Institute of Bankers.</p>
+
+            <h4>Key Expertise:</h4>
+            <ul class="checkmark-list">
+                <li>Project Analysis</li>
+                <li>Financial feasibility studies and business planning</li>
+                <li>Capital investment attraction & facilitation</li>
+                <li>International financing and investment sourcing</li>
+                <li>Foreign direct investment and technology transfer</li>
+                <li>Public-Private Partnership (PPP) development</li>
+                <li>Strategic guidance and consulting</li>
+            </ul>
+
+            <h4>Achievements:</h4>
+            <ul class="checkmark-list">
+                <li>Successfully facilitated loans/advances, investments and capital inflow for numerous clients in Kenya</li>
+                <li>Provided professional guidance contributing to growth of many businesses</li>
+                <li>Built strong network of international financiers, investors and fund facilitators</li>
+            </ul>
+        </div>
+
+        <div class="team-member">
+            <h3>Mr. Jabeer Basha E S</h3>
+            <p>Visionary entrepreneur and seasoned banker with 25 years of experience in India and Kenya.</p>
+            <p>Expertise in Islamic banking, core banking, credit management and technology adoption. Certifications: IIBF, CMC, IIT.</p>
+
+            <h4>Key Expertise:</h4>
+            <ul class="checkmark-list">
+                <li>25+ years banking experience</li>
+                <li>Headed Credit Department – Kenya Territory</li>
+                <li>Analyzed & interpreted Kenyan market</li>
+                <li>Designed policy frameworks & processed proposals</li>
+                <li>Adopted technology to optimize banking operations</li>
+            </ul>
+        </div>
+
+        <h3>Human Resources</h3>
+        <p>Team of professionals managing Finance, Marketing & Sales, Book Keeping, Accounts & Audit, IT, HR — supporting structure formation, monitoring, reporting, capacity building, talent nurturing, training and hiring suitable manpower for seamless operations and consistent growth.</p>
+    </section>
+
+    <!-- Contact placeholder -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Ready to transform your business? Let's connect.</p>
+        <p style="margin-top: 1rem;">email • phone • WhatsApp • office address</p>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Finspree Solutions Limited. All rights reserved.</p>
+    <p>A Catalyst to Empower | Kenya • EAC • India • Global</p>
+</footer>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking links
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        });
+    });
+</script>
+
+</body>
+</html>
